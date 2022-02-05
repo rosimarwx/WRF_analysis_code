@@ -7,7 +7,17 @@ subroutine class_precip_morphology(ni,nj,nk,reflectivity,www,varout,DY,DX)
   integer :: kk, jj, ii, jpts, ipts, j1, j2, i1, i2, iii, jjj
   real :: Zbg(ni,nj,nk), cnt(ni,nj,nk), convrad, dist, dummyout(ni,nj,nk)
 
-  !OUTPUT: dummyout = 1 if convective, = 2 if stratiform, = 3 other, = 0 if no rain
+  ! ------ subroutine written by Rosimar Rios-Berrios ----------------------!
+  !
+  !INPUT: 
+  !       nk, nj, ni = length of z, x, and y points
+  !       DX, DY = WRF grid spacing
+  !       reflectivity = simulated reflectivity
+  !       www = vertical velocity at the same levels as reflectivity
+  !       varout = 2-D variable of length ni x nj [this variable will be
+  !       overwritten] 
+  !OUTPUT:
+  !       varout = 1 if convective, = 2 if stratiform, = 3 other, = 0 if no rain
 
   dummyout(:,:,:) = 0.
   varout(:,:) = 0.
