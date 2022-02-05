@@ -1,0 +1,8 @@
+C NCLFORTSTART 
+  subroutine class_precip_morphology(ni,nj,nk,reflectivity,www,varout,DY,DX)
+    implicit none
+    integer nk, nj, ni
+    real DX, DY
+    real reflectivity(ni,nj,nk), www(ni,nj,nk)
+    real varout(ni,nj)
+C NCLEND
